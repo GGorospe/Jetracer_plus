@@ -14,3 +14,6 @@ car = NvidiaRacecar()
 
 # using the steering parameter of the NvidiaRacecar() object
 car.steering = 0.3
+
+# Controlling the car throttle
+car.throttle = 0.01

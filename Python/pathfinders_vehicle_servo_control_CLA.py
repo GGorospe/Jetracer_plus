@@ -24,5 +24,5 @@ args = parser.parse_args()
 car = NvidiaRacecar()
 
 # Commanding the jetracer's steering using the value supplied from the parser.
-car.steering = args.value
-print("The commanded servo value is: ", args.value)
+#car.throttle = args.value
+print("The commanded throttle value is: ", args.value)
