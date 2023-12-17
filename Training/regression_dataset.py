@@ -77,8 +77,9 @@ class Regression_dataset(torch.utils.data.Dataset):
         return int(x), int(y)
     
     def create_directory(self):
+        print("Creating New Dataset Directory: ")
         if not os.path.exists(self.directory):
-            print("Creating New Dataset Directory")
+            print("Success")
             subprocess.call(['mkdir', '-p', self.directory])
         else:
             print("Dataset directory exists.")

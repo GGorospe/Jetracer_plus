@@ -1,6 +1,6 @@
 # A python script to demonstrate the basics of Tensorboard
 
-# imports
+# importing required libraries
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -34,7 +34,8 @@ transform = transforms.Compose(
     [transforms.ToTensor(),
     transforms.Normalize((0.5,), (0.5,))])
 
-# datasets
+
+# Using the FashionMINST dataset for this example
 trainset = torchvision.datasets.FashionMNIST('./data',
     download=True,
     train=True,
@@ -97,7 +98,8 @@ optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 from torch.utils.tensorboard import SummaryWriter
 
 # default `log_dir` is "runs" - we'll be more specific here
-writer = SummaryWriter('logs/fashion_mnist_experiment_1')
+log_folder = "logs/experiments/" + datetime.now().strftime("%Y%m%d-%H%M%S")
+writer = SummaryWriter(log_folder)
 
 
 # helper functions
@@ -177,6 +179,7 @@ for epoch in range(3):  # loop over the dataset multiple times
 
 print('Finished Training')
 
+# Calculating total training time
 total_time = datetime.now() - training_start_time
 print("Training Duration: " + str(total_time))
 
